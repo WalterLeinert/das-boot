@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 
 	@RequestMapping("/")
-	public static String home() {
+	public String home() {
 		return "Das Boot, reporting for duty";
 	}
 

@@ -1,6 +1,7 @@
 package com.boot;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.Optional;
@@ -36,6 +37,9 @@ public class ShipwreckControllerTest {
 		when(shipwreckRepository.findById(1L)).thenReturn(Optional.of(sw));
 		
 		Shipwreck wreck = sc.get(1L).get();
+		
+		verify(shipwreckRepository).findById(1L);
+		
 		assertEquals(1L, wreck.getId().longValue());
 	}
 
